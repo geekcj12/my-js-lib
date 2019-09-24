@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .water-fall-item {
+            position: absolute;
+        }
+        .water-fall-item > img {
+            width: 220px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="water-fall-container">
+        <div class="water-fall-item">
+            <img src="https://cdn.geekcj.com/usr/uploads/2018/08/3732603934.jpg">
+        </div>
+        <div class="water-fall-item">
+            <img src="https://cdn.geekcj.com/usr/uploads/2018/08/3898597831.jpg">
+        </div>
+        <div class="water-fall-item">
+            <img src="https://cdn.geekcj.com/usr/uploads/2018/08/492360834.jpg">
+        </div>
+        <div class="water-fall-item">
+            <img src="https://cdn.geekcj.com/usr/uploads/2018/06/4094377864.png">
+        </div>
+        <div class="water-fall-item">
+            <img src="https://oss.miiiku.xyz/2019-09-06/2fbae73349028a33ea67619d1073a854.jpeg">
+        </div>
+        <div class="water-fall-item">
+            <img src="https://oss.miiiku.xyz/2019-09-06/psb.gif">
+        </div>
+        <div class="water-fall-item">
+            <img src="https://oss.miiiku.xyz/2019-09-06/3B3D7ED1061248D2479645B38DCCDDD4.jpg">
+        </div>
+        <div class="water-fall-item">
+            <img src="https://oss.miiiku.xyz/2019-09-06/d1dd3f083ce20e202b384ad1f788a2ed.jpeg">
+        </div>
+    </div>
+    <script src="./waterFall.js"></script>
+    <script>
+        waterFall('water-fall-container');
+        window.onresize = function() {
+            waterFall('water-fall-container');
+        }
+    </script>
+</body>
+</html>
