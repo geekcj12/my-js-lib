@@ -48,7 +48,9 @@
     </div>
     <script src="./waterFall.js"></script>
     <script>
-        waterFall('water-fall-container');
+        window.onload = function() {
+            waterFall('water-fall-container');
+        }
         window.onresize = function() {
             waterFall('water-fall-container');
         }

@@ -1,32 +1,26 @@
-function LazyLoad(imgs, placeholder) {
-    this.imgs = document.querySelectorAll(imgs);
-    this.placeholder = placeholder;
-}
-
-LazyLoad.prototype.init = function() {
-    var that = this;
-    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-    var windowHeight = window.innerHeight;
-    for (let i = 0; i < this.imgs.length; i++) {
-        this.imgs[i].setAttribute("data-src", this.imgs[i].src);
-        this.imgs[i].src = this.placeholder;
-        if (this.imgs[i].offsetTop < scrollTop + windowHeight) {
-            this.imgs[i].src = this.imgs[i].getAttribute("data-src");
-            this.imgs[i].removeAttribute("data-src");
+function lazyLoad() {
+    var imgs = document.querySelectorAll(".lazy");
+    for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        if (isShow(img) && isLoaded(img)) {
+            loadImg(img);
+        } else if (!isLoaded(img)) {
+            img.classList.remove("lazy");
         }
-    }
-    window.onscroll = function() {
-        that.load();
     }
 }
 
-LazyLoad.prototype.load = function() {
+function isShow(img) {
     var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
     var windowHeight = window.innerHeight;
-    for (let i = 0; i < this.imgs.length; i++) {
-        if (this.imgs[i].getAttribute("data-src") && this.imgs[i].offsetTop < scrollTop + windowHeight) {
-            this.imgs[i].src = this.imgs[i].getAttribute("data-src");
-            this.imgs[i].removeAttribute("data-src");
-        }
-    }
+    return img.offsetTop < scrollTop + windowHeight;
+}
+
+function isLoaded(img) {
+    return img.getAttribute("data-src") && img.classList.contains("lazy");
+}
+
+function loadImg(img) {
+    img.src = img.getAttribute("data-src");
+    img.removeAttribute("data-src");
 }

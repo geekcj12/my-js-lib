@@ -7,35 +7,30 @@
     <title>Document</title>
     <style>
         img {
-            max-width: 100%;
-            height: 500px;
+            width: 100%;
+        }
+        .lazy {
+            width: 640px;
+            height: 480px;
         }
     </style>
 </head>
 <body>
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
-    <img src="https://i.loli.net/2018/10/14/5bc2e07bcd76b.jpg">
+    <img class="lazy" data-src="https://oss.miiiku.xyz/2019-09-06/2fbae73349028a33ea67619d1073a854.jpeg">
+    <img class="lazy" data-src="https://oss.miiiku.xyz/2019-09-06/3B3D7ED1061248D2479645B38DCCDDD4.jpg">
+    <img class="lazy" data-src="https://oss.miiiku.xyz/2019-09-06/2fbae73349028a33ea67619d1073a854.jpeg">
+    <img class="lazy" data-src="https://oss.miiiku.xyz/2019-09-06/3B3D7ED1061248D2479645B38DCCDDD4.jpg">
+    <img class="lazy" data-src="https://oss.miiiku.xyz/2019-09-06/2fbae73349028a33ea67619d1073a854.jpeg">
+    <img class="lazy" data-src="https://oss.miiiku.xyz/2019-09-06/3B3D7ED1061248D2479645B38DCCDDD4.jpg">
+    <img class="lazy" data-src="https://oss.miiiku.xyz/2019-09-06/2fbae73349028a33ea67619d1073a854.jpeg">
+    <img class="lazy" data-src="https://oss.miiiku.xyz/2019-09-06/3B3D7ED1061248D2479645B38DCCDDD4.jpg">
+    <img class="lazy" data-src="https://oss.miiiku.xyz/2019-09-06/2fbae73349028a33ea67619d1073a854.jpeg">
+    <img class="lazy" data-src="https://oss.miiiku.xyz/2019-09-06/3B3D7ED1061248D2479645B38DCCDDD4.jpg">
     <script src="lazy-load.js"></script>
     <script>
-        var lazyLoad = new LazyLoad('img', 'loading.gif');
-        window.onload = lazyLoad.init();
+        window.onscroll = function() {
+            lazyLoad();
+        }
     </script>
 </body>
 </html>
